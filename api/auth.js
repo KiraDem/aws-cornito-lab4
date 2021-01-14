@@ -4,8 +4,8 @@ const jwkToPem = require("jwk-to-pem");
 
 const AmazonCognitoIdentity = require('amazon-cognito-identity-js');
 const poolData = {
-    UserPoolId: "us-west-2_7SAgpqeCf",
-    ClientId: "5433s3rs1hp1h8jen8mnmk8s65",
+    UserPoolId: "us-west-2_pdglrtFDj",
+    ClientId: "3j1k36akb78jgvom3vb525tu3a",
 };
 const pool_region = "us-west-2";
 const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
@@ -43,7 +43,7 @@ const login = (name, password, res) => {
 const validate = (req, res, next) => {
     let token = req.headers.authorization;
     request({
-        url : `https://cognito-idp.us-west-2.amazonaws.com/us-west-2_7SAgpqeCf/.well-known/jwks.json`,
+        url : `https://cognito-idp.us-west-2.amazonaws.com/us-west-2_pdglrtFDj/.well-known/jwks.json`,
         json : true
     }, (error, response, body) => {
         let pem;
